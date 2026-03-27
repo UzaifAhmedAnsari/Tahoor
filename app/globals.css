@@ -54,3 +54,51 @@ body {
   width: 100%;
   height: 100%;
 }
+
+
+.CampsImage {
+  background-image: url("../assets/aboutImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+
+.QuoteReserveImage {
+  background-image: url("../assets/aboutImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.RatesImage {
+  background-image: url("../assets/aboutImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.MapImage {
+  background-image: url("../assets/aboutImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.ContactImage {
+  background-image: url("../assets/contact-background.jpg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
