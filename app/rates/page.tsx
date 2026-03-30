@@ -82,25 +82,68 @@ export default function RatesPage() {
           </h2>
 
           <div className="mt-10">
-            <div className="grid gap-3 md:grid-cols-[1fr_1fr_0.7fr]">
-              <PlaceholderImage
-                label="Photo 1"
-                className="h-[270px] rounded-none"
-              />
-              <PlaceholderImage
-                label="Photo 2"
-                className="h-[270px] rounded-none"
-              />
-              <PlaceholderImage
-                label="Photo 3"
-                className="h-full min-h-[553px] rounded-none"
-              />
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-[#281703] mb-4">4 Nights / 3 Days Package</h3>
+                <div className="text-3xl font-bold text-[#F16724] mb-2">$1,749</div>
+                <p className="text-sm text-gray-600 mb-4">per person</p>
+                <ul className="space-y-2 text-sm">
+                  <li>✓ 4 nights lodging</li>
+                  <li>✓ 3 full days hunting</li>
+                  <li>✓ Access to premium hunting grounds</li>
+                  <li>✓ Basic amenities included</li>
+                </ul>
+              </div>
 
-              <div className="md:col-span-2">
-                <PlaceholderImage
-                  label="Photo 4"
-                  className="h-[270px] rounded-none"
-                />
+              <div className="bg-white p-6 rounded-lg shadow-md border-2 border-[#F16724]">
+                <div className="bg-[#F16724] text-white px-3 py-1 rounded text-sm inline-block mb-2">Most Popular</div>
+                <h3 className="text-xl font-bold text-[#281703] mb-4">3 Nights / 2 Days Package</h3>
+                <div className="text-3xl font-bold text-[#F16724] mb-2">$1,399</div>
+                <p className="text-sm text-gray-600 mb-4">per person</p>
+                <ul className="space-y-2 text-sm">
+                  <li>✓ 3 nights lodging</li>
+                  <li>✓ 2 full days hunting</li>
+                  <li>✓ Access to premium hunting grounds</li>
+                  <li>✓ Basic amenities included</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-[#281703] mb-4">5 Nights / 4 Days Package</h3>
+                <div className="text-3xl font-bold text-[#F16724] mb-2">$2,099</div>
+                <p className="text-sm text-gray-600 mb-4">per person</p>
+                <ul className="space-y-2 text-sm">
+                  <li>✓ 5 nights lodging</li>
+                  <li>✓ 4 full days hunting</li>
+                  <li>✓ Access to premium hunting grounds</li>
+                  <li>✓ Extended amenities</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold text-[#281703] mb-4">What's Included</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold mb-2">Hunting Package Includes:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>• Access to private hunting grounds</li>
+                    <li>• Modern lodging accommodations</li>
+                    <li>• Hot showers and basic amenities</li>
+                    <li>• Access to clean, well-maintained facilities</li>
+                    <li>• Experienced local guidance available</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2">Additional Services:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>• Guided hunts (additional cost)</li>
+                    <li>• Dog training areas</li>
+                    <li>• Equipment rental</li>
+                    <li>• Transportation services</li>
+                    <li>• Processing and cleaning services</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -125,15 +168,27 @@ export default function RatesPage() {
             </div>
 
             <div className="flex flex-col items-start gap-3 text-[15px] font-semibold leading-7 text-[#F16724] md:items-end md:text-right">
-              {links.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="transition-colors hover:text-[#281703]"
-                >
-                  {item}
-                </a>
-              ))}
+              <Link href="/availability" className="transition-colors hover:text-[#281703]">
+                Pheasant Hunting Package Rates and Availability
+              </Link>
+              <Link href="/discounts" className="transition-colors hover:text-[#281703]">
+                Special Offers, Discounts, Add-Ons and Sales
+              </Link>
+              <Link href="/quote-reserve" className="transition-colors hover:text-[#281703]">
+                Quote or Reserve Your Own Hunt
+              </Link>
+              <Link href="/about" className="transition-colors hover:text-[#281703]">
+                What's Included in Your Unguided Pheasant Hunting Package
+              </Link>
+              <Link href="/availability" className="transition-colors hover:text-[#281703]">
+                Self-Guided South Dakota Pheasant Hunting Season Schedule
+              </Link>
+              <div className="text-[#281703] font-normal">
+                Minimum group size: 6-10 hunters per group
+              </div>
+              <div className="text-[#281703] font-normal">
+                All rates are per person based on double occupancy
+              </div>
             </div>
           </div>
         </div>

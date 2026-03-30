@@ -1,12 +1,14 @@
+"use client";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
+import huntImg from "@/assets/catalogue1.png";
+import groupImg from "@/assets/catalogue2.png";
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
   const [formData, setFormData] = useState({
-    huntType: "",
-    experience: "",
-    minGroupSize: "",
-    maxGroupSize: "",
     dogPower: "",
     firstChoice: "",
     secondChoice: "",
@@ -17,7 +19,7 @@ export default function ContactPage() {
     additionalComments: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -25,10 +27,48 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission (e.g., send to server)
-    console.log("Form submitted", formData);
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage(data.message);
+        // Reset form
+        setFormData({
+          huntType: "",
+          experience: "",
+          minGroupSize: "",
+          maxGroupSize: "",
+          dogPower: "",
+          firstChoice: "",
+          secondChoice: "",
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          additionalComments: "",
+        });
+      } else {
+        setSubmitMessage(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitMessage('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -94,8 +134,8 @@ export default function ContactPage() {
                 </select>
               </div>
               <div className="flex-1">
-                <img
-                  src="/assets/contact_hunt_image.jpg"
+                <Image
+                  src={huntImg}
                   alt="Hunt Image"
                   className="w-full h-[180px] object-cover rounded-md"
                 />
@@ -157,8 +197,8 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="flex-1">
-                <img
-                  src="/assets/contact_group_image.jpg"
+                <Image
+                  src={groupImg}
                   alt="Group Image"
                   className="w-full h-[180px] object-cover rounded-md"
                 />
@@ -285,10 +325,17 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="mt-8 w-full py-4 text-lg font-semibold text-white bg-[#F16724] rounded-md"
+              disabled={isSubmitting}
+              className="mt-8 w-full py-4 text-lg font-semibold text-white bg-[#F16724] rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit Form
+              {isSubmitting ? 'Submitting...' : 'Submit Form'}
             </button>
+
+            {submitMessage && (
+              <div className={`mt-4 p-4 rounded-md ${submitMessage.includes('Thank you') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                {submitMessage}
+              </div>
+            )}
           </form>
         </div>
       </section>

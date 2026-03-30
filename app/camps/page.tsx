@@ -7,31 +7,31 @@ const campProperties = [
     name: "Faulkton Pheasant Camp",
     location: "Faulkton, South Dakota",
     county: "Faulk County",
-    href: "#",
+    href: "/camps/faulkton-pheasant-camp",
   },
   {
     name: "Gunner's Haven Pheasant Camp",
     location: "Selby, South Dakota",
     county: "Walworth County",
-    href: "#",
+    href: "/camps/gunners-haven-pheasant-camp",
   },
   {
     name: "Meadow Creek Pheasant Camp",
     location: "Meadow, South Dakota",
     county: "Perkins County",
-    href: "#",
+    href: "/camps/meadow-creek-pheasant-camp",
   },
   {
     name: "Pheasant Camp Lodge",
     location: "Andes, South Dakota",
     county: "Charles Mix County",
-    href: "#",
+    href: "/camps/pheasant-camp-lodge",
   },
   {
     name: "West River Adventures Pheasant Camp",
     location: "Timberlake, SD",
     county: "Dewey County",
-    href: "#",
+    href: "/camps/west-river-adventures-pheasant-camp",
   },
 ];
 
