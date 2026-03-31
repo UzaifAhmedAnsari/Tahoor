@@ -269,8 +269,8 @@ export default function QuoteReservePage() {
     <main className="flex flex-col">
       {/* Hero */}
       <section className="QuoteReserveImage relative flex h-screen min-h-[620px] items-center justify-center">
-        <div className="absolute inset-0 bg-[#f0d2b0]/50" />
-        <div className="absolute inset-0 bg-black/5" />
+        <div className="absolute inset-0 " />
+        <div className="absolute inset-0 " />
 
         <div className="relative z-10 flex flex-col items-center px-6 text-center">
           <h1 className="text-[46px] font-bold uppercase leading-none text-[#281703] md:text-[76px]">
@@ -299,9 +299,9 @@ export default function QuoteReservePage() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 translate-y-1/2">
+        {/* <div className="absolute bottom-0 left-0 right-0 translate-y-1/2">
           <div className="h-20 w-full rounded-t-[100%] border-t-[4px] border-[#281703] bg-[#E7DCCF]" />
-        </div>
+        </div> */}
       </section>
 
       {/* Main content */}

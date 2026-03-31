@@ -10,26 +10,7 @@ import photo4 from "@/assets/rate 2.jpg";
 import photo5 from "@/assets/discount 6.jpg";
 import photo6 from "@/assets/rate 1.jpg";
 
-const heroPercents = [
-  { className: "left-[1%] top-[1%] text-[86px] md:text-[132px]" },
-  { className: "left-[18%] top-[0%] text-[62px] md:text-[96px]" },
-  { className: "left-[39%] top-[2%] text-[54px] md:text-[84px]" },
-  { className: "right-[8%] top-[1%] text-[72px] md:text-[112px]" },
-  { className: "left-[4%] top-[20%] text-[64px] md:text-[108px]" },
-  { className: "left-[24%] top-[16%] text-[54px] md:text-[88px]" },
-  { className: "left-[46%] top-[20%] text-[58px] md:text-[94px]" },
-  { className: "left-[71%] top-[18%] text-[50px] md:text-[86px]" },
-  { className: "right-[1%] top-[24%] text-[72px] md:text-[118px]" },
-  { className: "left-[0%] top-[47%] text-[62px] md:text-[102px]" },
-  { className: "left-[22%] top-[43%] text-[54px] md:text-[86px]" },
-  { className: "left-[43%] top-[39%] text-[68px] md:text-[108px]" },
-  { className: "left-[65%] top-[44%] text-[56px] md:text-[90px]" },
-  { className: "right-[6%] top-[50%] text-[76px] md:text-[124px]" },
-  { className: "left-[8%] bottom-[10%] text-[70px] md:text-[110px]" },
-  { className: "left-[32%] bottom-[12%] text-[56px] md:text-[88px]" },
-  { className: "left-[55%] bottom-[8%] text-[72px] md:text-[114px]" },
-  { className: "right-[14%] bottom-[14%] text-[62px] md:text-[100px]" },
-];
+
 
 function BulletItem({ children }: { children: ReactNode }) {
   return (
@@ -71,53 +52,46 @@ function ImageTile({
 
 export default function DiscountsPage() {
   return (
-    <main className="overflow-hidden bg-[#ddd2c7] text-[#281703]">
-      <section className="relative isolate flex min-h-[360px] items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#f4efe8_0%,#f0cf9f_100%)] px-4 pb-24 pt-20 sm:min-h-[430px] sm:px-6 sm:pt-24 lg:min-h-[520px] lg:pb-28">
-        <div className="absolute inset-0 opacity-[0.16]">
-          {heroPercents.map((item, index) => (
-            <span
-              key={index}
-              className={`absolute font-black leading-none text-[#7f6248] ${item.className}`}
-            >
-              %
-            </span>
-          ))}
-        </div>
+    <main className="flex flex-col bg-[#e8ded1] text-[#281703]">
+      <section className="relative isolate overflow-hidden">
+        <div className="DiscountsImage absolute inset-0 bg-cover bg-center" />
+        <div className="absolute inset-0" />
+        <div className="absolute inset-0" />
 
-        <div className="relative z-10 flex flex-col items-center text-center">
-          <h1 className="text-[38px] font-black uppercase leading-none tracking-[-0.03em] text-[#1e1004] sm:text-[54px] lg:text-[82px]">
-            Discounts
-          </h1>
+        <div className="relative mx-auto flex min-h-[360px] max-w-[1600px] items-center justify-center px-5 pb-24 pt-24 text-center sm:min-h-[430px] sm:px-8 sm:pb-28 md:min-h-[510px] md:pt-28 lg:min-h-[560px] lg:px-10 lg:pb-32">
+          <div className="translate-y-6 sm:translate-y-8 md:translate-y-10">
+            <h1 className="text-[42px] font-black uppercase leading-none tracking-[-0.04em] text-[#1f1308] sm:text-[54px] md:text-[68px] lg:text-[74px]">
+              Discounts
+            </h1>
 
-          <nav
-            aria-label="Breadcrumb"
-            className="mt-5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#2a1705] sm:gap-3 sm:text-[11px]"
-          >
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 transition-colors duration-200 hover:text-[#ed7a34]"
+            <nav
+              aria-label="Breadcrumb"
+              className="mt-5 flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#24150a] sm:text-[11px]"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="13"
-                height="13"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 transition-colors duration-200 hover:text-[#d26f2f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d26f2f] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
               >
-                <path d="M12 3.172 3 10.2V21h6v-6h6v6h6V10.2l-9-7.028Z" />
-              </svg>
-              <span>Home</span>
-            </Link>
-            <span aria-hidden="true">›</span>
-            <span className="text-[#1e1004]">Discounts</span>
-          </nav>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3.172 3 10.2V21h6v-6h6v6h6V10.2l-9-7.028Z" />
+                </svg>
+                <span>Home</span>
+              </Link>
+              <span>›</span>
+              <span aria-current="page">Discounts</span>
+            </nav>
+          </div>
         </div>
-
-        <div className="absolute -bottom-[78px] left-1/2 h-[160px] w-[140%] -translate-x-1/2 rounded-[100%] border-t-[4px] border-[#281703] bg-[#e3d9ce] sm:-bottom-[84px] sm:h-[172px] lg:-bottom-[92px] lg:h-[188px]" />
       </section>
 
-      <section className="relative z-10 bg-[#e3d9ce] px-4 pb-14 pt-14 sm:px-6 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-20 lg:pt-20">
+      <section className="relative z-10 bg-[#e8ded1] px-4 pb-14 pt-14 sm:px-6 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-20 lg:pt-20">
         <div className="mx-auto max-w-[1220px]">
           <div className="mx-auto max-w-[860px] text-center">
             <h2 className="text-[27px] font-black leading-[1.05] tracking-[-0.03em] text-[#281703] sm:text-[36px] lg:text-[58px]">
